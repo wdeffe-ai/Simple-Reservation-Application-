@@ -1,0 +1,140 @@
+{
+  "currency": "USD",
+  "description": "Room rates for the private club reservation application.",
+  "seasonDefinitions": {
+    "winter": {
+      "name": "Winter",
+      "start": {
+        "month": 11,
+        "day": 1
+      },
+      "end": {
+        "month": 4,
+        "day": 30
+      },
+      "includesStartDate": true,
+      "includesEndDate": true,
+      "description": "November 1 through April 30, inclusive."
+    },
+    "summer": {
+      "name": "Summer",
+      "start": {
+        "month": 5,
+        "day": 1
+      },
+      "end": {
+        "month": 10,
+        "day": 31
+      },
+      "includesStartDate": true,
+      "includesEndDate": true,
+      "description": "May 1 through October 31, inclusive."
+    }
+  },
+  "pricingRules": {
+    "seasonDeterminedBy": "arrivalDate",
+    "arrivalDateDeterminesReservationSeason": true,
+    "crossSeasonReservationUsesArrivalSeason": true,
+    "crossSeasonWeekendUsesArrivalSeason": true,
+    "weekendRateAvailability": [
+      "Friday night and Saturday night, with departure on Sunday",
+      "Friday night, Saturday night, and Sunday night, with departure on Monday"
+    ],
+    "childCategoryDeterminedBy": "accompanyingAdultStatus",
+    "childCategoryRules": {
+      "memberChild": "Use when the accompanying adult is a Member or Junior Member.",
+      "guestChild": "Use when the accompanying adult is a Guest or Junior Guest."
+    }
+  },
+  "rates": {
+    "winter": {
+      "weekday": {
+        "description": "Winter weekday rate.",
+        "nights": 1,
+        "member": 30,
+        "juniorMember": 15,
+        "guest": 45,
+        "juniorGuest": 20,
+        "memberChild": 3,
+        "guestChild": 5
+      },
+      "twoDayWeekend": {
+        "description": "Two-day winter weekend: Friday night and Saturday night, with departure on Sunday.",
+        "nights": 2,
+        "arrivalDay": "Friday",
+        "departureDay": "Sunday",
+        "member": 60,
+        "juniorMember": 30,
+        "guest": 90,
+        "juniorGuest": 40,
+        "memberChild": 6,
+        "guestChild": 10
+      },
+      "threeDayWeekend": {
+        "description": "Three-day winter weekend: Friday night, Saturday night, and Sunday night, with departure on Monday.",
+        "nights": 3,
+        "arrivalDay": "Friday",
+        "departureDay": "Monday",
+        "member": 90,
+        "juniorMember": 45,
+        "guest": 135,
+        "juniorGuest": 60,
+        "memberChild": 9,
+        "guestChild": 15
+      }
+    },
+    "summer": {
+      "daily": {
+        "description": "Summer daily rate.",
+        "nights": 1,
+        "member": 20,
+        "juniorMember": 10,
+        "guest": 30,
+        "juniorGuest": 15,
+        "memberChild": 3,
+        "guestChild": 5
+      }
+    }
+  },
+  "memberCategories": {
+    "member": {
+      "label": "Member",
+      "description": "A club member or guest 18 years of age or older."
+    },
+    "juniorMember": {
+      "label": "Junior Member",
+      "description": "A member age 6 until the person turns 18."
+    },
+    "guest": {
+      "label": "Guest",
+      "description": "A non-member guest 18 years of age or older."
+    },
+    "juniorGuest": {
+      "label": "Junior Guest",
+      "description": "A non-member guest age 6 until the person turns 18."
+    },
+    "memberChild": {
+      "label": "Member Child",
+      "description": "A member's child under the age of 6; use the accompanying adult's member status."
+    },
+    "guestChild": {
+      "label": "Guest Child",
+      "description": "A guest's child under the age of 6; use the accompanying adult's guest status."
+    }
+  },
+  "notes": [
+    "All prices are numeric dollar amounts in United States dollars.",
+    "Winter is November 1 through April 30, inclusive.",
+    "Summer is May 1 through October 31, inclusive.",
+    "The season is determined from the reservation arrival date.",
+    "If a reservation or weekend overlaps Winter and Summer, use the season associated with the arrival date.",
+    "A two-day weekend means Friday night and Saturday night, with departure on Sunday.",
+    "A three-day weekend means Friday night, Saturday night, and Sunday night, with departure on Monday.",
+    "Weekend rates are available only for the Friday/Saturday or Friday/Saturday/Sunday night patterns described above.",
+    "A person is considered an adult for pricing purposes at age 18 or older.",
+    "A junior is age 6 until the person turns 18.",
+    "A child is under the age of 6.",
+    "Member Child or Guest Child pricing is selected based on the accompanying adult's status.",
+    "The source information spells 'Defined' as 'Defeined' for the child category; this JSON uses the corrected spelling."
+  ]
+}
